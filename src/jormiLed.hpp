@@ -1,17 +1,18 @@
 /*
-	Jormi_Led.h
+	jormiLed.h
 	Librería de manejo de leds
 	v0.1	20200826
 	v0.2	20200906
 	v0.3	20210129	Multitask	
 */
 
+#ifndef __jormiLed_HPP__
+#define __jormiLed_HPP__
 
-#ifndef Jormi_Led_h
-#define Jormi_Led_h
+#include "Arduino.h"
 
 
-class Jormi_Led
+class jormiLed
 {
 	
 private:
@@ -25,7 +26,7 @@ public:
 /*
 	Constructor, inicio con led apagado
 */
-Jormi_Led(byte pin);
+jormiLed(byte pin);
 
 
 /*
@@ -76,4 +77,4 @@ void informacion();
 };
 
 
-#endif
+#endif  //__jormiLed_HPP__

@@ -1,10 +1,13 @@
+
+#ifndef __jormi5Direcciones_HPP__
+#include "jormi5Direcciones.hpp"
+
 #include "Arduino.h"
-#include "Jormi_5Direcciones.h"
 
 /*
 	Constructor
 */
-Jormi_CincoEjes::Jormi_CincoEjes(byte pinUP, byte pinDWN, byte pinLFT, byte pinRHT, byte pinMID, byte pinSET, byte pinRST)
+jormi5Direcciones::jormi5Direcciones(byte pinUP, byte pinDWN, byte pinLFT, byte pinRHT, byte pinMID, byte pinSET, byte pinRST)
 {
 	
 	_pinUP = pinUP;
@@ -31,7 +34,7 @@ Jormi_CincoEjes::Jormi_CincoEjes(byte pinUP, byte pinDWN, byte pinLFT, byte pinR
 	Estado
 	Devuelve el byte que contiene la lectura de pines
 */
-byte Jormi_CincoEjes::estado()
+byte jormi5Direcciones::estado()
 {
 	return _estado;
 }
@@ -41,7 +44,7 @@ byte Jormi_CincoEjes::estado()
 	Arriba
 	True si pulsado UP
 */
-bool Jormi_CincoEjes::arriba()
+bool jormi5Direcciones::arriba()
 {
 	if(bitRead(_estado, BUTTON_UP))
 		return true;
@@ -54,7 +57,7 @@ bool Jormi_CincoEjes::arriba()
 	Abajo
 	True si pulsado DWN
 */
-bool Jormi_CincoEjes::abajo()
+bool jormi5Direcciones::abajo()
 {
 	if(bitRead(_estado, BUTTON_DOWN))
 		return true;
@@ -67,7 +70,7 @@ bool Jormi_CincoEjes::abajo()
 	Izquierda
 	True si pulsado LFT
 */
-bool Jormi_CincoEjes::izquierda()
+bool jormi5Direcciones::izquierda()
 {
 	if(bitRead(_estado, BUTTON_LEFT))
 		return true;
@@ -80,7 +83,7 @@ bool Jormi_CincoEjes::izquierda()
 	Derecha
 	True si pulsado RHT
 */
-bool Jormi_CincoEjes::derecha()
+bool jormi5Direcciones::derecha()
 {
 	if(bitRead(_estado, BUTTON_RIGHT))
 		return true;
@@ -93,7 +96,7 @@ bool Jormi_CincoEjes::derecha()
 	Centro
 	True si pulsado MID
 */
-bool Jormi_CincoEjes::centro()
+bool jormi5Direcciones::centro()
 {
 	if(bitRead(_estado, BUTTON_MID))
 		return true;
@@ -106,7 +109,7 @@ bool Jormi_CincoEjes::centro()
 	Set
 	True si pulsado SET
 */
-bool Jormi_CincoEjes::set()
+bool jormi5Direcciones::set()
 {
 	if(bitRead(_estado, BUTTON_SET))
 		return true;
@@ -119,7 +122,7 @@ bool Jormi_CincoEjes::set()
 	Reset
 	True si pulsado RST
 */
-bool Jormi_CincoEjes::reset()
+bool jormi5Direcciones::reset()
 {
 	if(bitRead(_estado, BUTTON_RESET))
 		return true;
@@ -131,7 +134,7 @@ bool Jormi_CincoEjes::reset()
 /*
 	Update
 */
-void Jormi_CincoEjes::update()
+void jormi5Direcciones::update()
 {	
 	byte leido;
 	
@@ -185,7 +188,7 @@ void Jormi_CincoEjes::update()
 	Información
 	Muestra en ventana de depuración info de las variables y pines conectados
 */
-void Jormi_CincoEjes::informacion()
+void jormi5Direcciones::informacion()
 {
 //	Serial.println("Información del modulo 5 direcciones");
 	
@@ -215,3 +218,5 @@ void Jormi_CincoEjes::informacion()
 	Serial.println("\tCOM   RESET   SET   MID        RIGHT   LEFT   DOWN   UP");
 	
 }
+
+#endif //__jormi5Direcciones_HPP__

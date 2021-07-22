@@ -1,10 +1,9 @@
 /*
  *	jormazLib.h
  */
+ 
+#include "Arduino.h"
 
-
-#ifndef __jormazLib_H__
-#define __jormazLib_H__
 
 /**	 @mainpage
 
@@ -19,21 +18,23 @@ Incluye gestion de:
 \page Revision History
 \par 2021.07.16 v1.0
 Compilacion de las librerias separdas a un conjunta
--Jormi_Pulsador
--Jormi_Led
--Jormi_Depura
--Jormi_5Direcciones
-
 */
 
+#ifndef __jormazLib_H__
+#define __jormazLib_H__
 
 /*
- *	Cabeceras H incluidas
+ *	*************************************************************************
+ */
+ 
+#include "jormiDepura.hpp"
+#include "jormiPulsador.hpp"
+#include "jormiLed.hpp"
+#include "jormi5Direcciones.hpp"
+
+/*
+ *	*************************************************************************
  */
 
-#include "Jormi_5Direcciones.h"
-#include "Jormi_Depura.h"
-#include "Jormi_Led.h"
-#include "Jormi_Pulsador.h"
 
-#endif
+#endif	//__jormazLib_H__

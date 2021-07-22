@@ -1,5 +1,5 @@
 /*
-	Jormi_CincoEjes.h
+	jormi5Direcciones.h
 	Librería de manejo del modulo 5 direcciones + reset + set
 	
 	IMPORTANTE: COM puesto a GND con resistencia 10K como pull down
@@ -10,10 +10,10 @@
 
 
 
+#ifndef __jormi5Direcciones_HPP__
+#define __jormi5Direcciones_HPP__
 
-#ifndef Jormi_5Direcciones_h
-#define Jormi_5Direcciones_h
-
+#include "Arduino.h"
 
 #define BUTTON_UP		0
 #define BUTTON_DOWN		1
@@ -24,7 +24,7 @@
 #define BUTTON_RESET	6
 
 
-class Jormi_CincoEjes
+class jormi5Direcciones
 {
 	
 private:
@@ -47,7 +47,7 @@ public:
 /*
 	Constructor
 */
-Jormi_CincoEjes(byte pinUP, byte pinDWN, byte pinLFT, byte pinRHT, byte pinMID, byte pinSET, byte pinRST);
+jormi5Direcciones(byte pinUP, byte pinDWN, byte pinLFT, byte pinRHT, byte pinMID, byte pinSET, byte pinRST);
 
 
 /*
@@ -121,4 +121,4 @@ void informacion();
 };
 
 
-#endif
+#endif //__jormi5Direcciones_HPP__

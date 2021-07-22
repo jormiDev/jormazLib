@@ -1,5 +1,6 @@
+
 /*
-	Jormi_Depura_h
+	jormiDepura_h
 	Librería para envio de mensajes de depuración
 	v0.1	20200906
 	v0.2	20210130
@@ -8,22 +9,21 @@
 */
 
 
-#ifndef Jormi_Depura_h
-#define Jormi_Depura_h
+#ifndef __jormiDepura_HPP__
+#define __jormiDepura_HPP__
 
 #include "Arduino.h"
 
-class Jormi_Depura
+
+class jormiDepura
 {
 private:	
 		
 public:
-
 /*	
 	Constructor
 */
-Jormi_Depura();
-
+jormiDepura();
 
 /*
 	texto
@@ -32,71 +32,29 @@ Jormi_Depura();
 */
 void texto(String cadena);
 
-
 /*
 	salto
 	Inserta linea en blanco
 */
 void salto();
 
-
 /*
 	xInt
-	Muestra el valor de una variable INT
+	Muestra el valor de una variable int, String, bool, float, byte, uLong, long
 */
 void vble(String v, int x);
-
-
-/*
-	xString
-	Muestra el valor de una variable String
-*/
 void vble(String v, String x);
-
-
-/*
-	xBool
-	Muestra el valor de una variable bool
-*/
 void vble(String v, bool x);
-
-
-/*
-	xFloat
-	Muestra el valor de una variable Float
-*/
 void vble(String v, float x);
-
-
-/*
-	xByte
-	Muestra el valor de una variable byte
-*/
 void vble(String v, byte x);
-
+void vble(String v, unsigned long x);
+void vble(String v, long x);
 
 /*
 	xBinario
 	Muestra el valor de una variable byte en binario
 */
 void binario(String v, byte x);
-
-
-/*
-	xULong
-	Muestra el valor de una variable unsigned long
-*/
-void vble(String v, unsigned long x);
-
-
-/*
-	xLong
-	Muestra el valor de una variable long
-*/
-void vble(String v, long x);
-
-
-
 };
 
-#endif
+#endif	//__jormiDepura_HPP__

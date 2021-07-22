@@ -1,10 +1,13 @@
+
+#ifndef __jormiDepura_HPP__
+#include "jormiDepura.hpp"
+
 #include "Arduino.h"
-#include "Jormi_Depura.h"
 
-
-/*	Constructor
+/*	
+	Constructor
 */
-Jormi_Depura::Jormi_Depura(){
+jormiDepura::jormiDepura(){
 	Serial.print("lib_depura * * * OK\n");
 }
 
@@ -14,7 +17,7 @@ Jormi_Depura::Jormi_Depura(){
 	Muestra una cadena de texto + \n
 	Entrada: cadena de texto
 */
-void Jormi_Depura::texto(String cadena)
+void jormiDepura::texto(String cadena)
 {
 	Serial.print("\t\t");
 	Serial.println(cadena);
@@ -25,7 +28,7 @@ void Jormi_Depura::texto(String cadena)
 	salto
 	Inserta linea en blanco
 */
-void Jormi_Depura::salto()
+void jormiDepura::salto()
 {
 	Serial.println("");
 }
@@ -35,7 +38,7 @@ void Jormi_Depura::salto()
 	xInt
 	Muestra el valor de una variable INT
 */
-void Jormi_Depura::vble(String v, int x)
+void jormiDepura::vble(String v, int x)
 {
 	Serial.print("(Int)\t\t");
 	Serial.print(v);
@@ -47,7 +50,7 @@ void Jormi_Depura::vble(String v, int x)
 	xString
 	Muestra el valor de una variable String
 */
-void Jormi_Depura::vble(String v, String x)
+void jormiDepura::vble(String v, String x)
 {
 	Serial.print("(String)\t");
 	Serial.print(v);
@@ -59,7 +62,7 @@ void Jormi_Depura::vble(String v, String x)
 	xBool
 	Muestra el valor de una variable bool
 */
-void Jormi_Depura::vble(String v, bool x)
+void jormiDepura::vble(String v, bool x)
 {
 	Serial.print("(Bool)\t\t");
 	Serial.print(v);
@@ -71,7 +74,7 @@ void Jormi_Depura::vble(String v, bool x)
 	xFloat
 	Muestra el valor de una variable Float
 */
-void Jormi_Depura::vble(String v, float x)
+void jormiDepura::vble(String v, float x)
 {
 	Serial.print("(Float)\t\t");
 	Serial.print(v);
@@ -84,7 +87,7 @@ void Jormi_Depura::vble(String v, float x)
 	xByte
 	Muestra el valor de una variable byte
 */
-void Jormi_Depura::vble(String v, byte x)
+void jormiDepura::vble(String v, byte x)
 {
 	Serial.print("(Byte)\t\t");
 	Serial.print(v);
@@ -97,7 +100,7 @@ void Jormi_Depura::vble(String v, byte x)
 	xULong
 	Muestra el valor de una variable unsigned long
 */
-void Jormi_Depura::vble(String v, unsigned long x)
+void jormiDepura::vble(String v, unsigned long x)
 {
 	Serial.print("(Unsigned long)\t\t");
 	Serial.print(v);
@@ -109,7 +112,7 @@ void Jormi_Depura::vble(String v, unsigned long x)
 	xLong
 	Muestra el valor de una variable long
 */
-void Jormi_Depura::vble(String v, long x)
+void jormiDepura::vble(String v, long x)
 {
 	Serial.print("(Long)\t\t");
 	Serial.print(v);
@@ -121,7 +124,7 @@ void Jormi_Depura::vble(String v, long x)
 	xByte
 	Muestra el valor de una variable byte en binario
 */
-void Jormi_Depura::binario(String v, byte x)
+void jormiDepura::binario(String v, byte x)
 {
 	Serial.print("(En binario)\t\t");
 	Serial.print(v);
@@ -131,3 +134,5 @@ void Jormi_Depura::binario(String v, byte x)
 	}
 	Serial.println("");
 }
+
+#endif

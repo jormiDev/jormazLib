@@ -1,12 +1,14 @@
-#include "Arduino.h"
-#include "Jormi_Pulsador.h"
 
+#ifndef __jormiPulsador_HPP__
+#include "jormiPulsador.hpp"
+
+#include "Arduino.h"
 
 /*
 	Constructor
 	int pin			pin de entrada
 */
-Jormi_Pulsador::Jormi_Pulsador(byte pin, bool tipo)
+jormiPulsador::jormiPulsador(byte pin, bool tipo)
 {
 	_pin = pin;
 	_estado = false;
@@ -17,13 +19,12 @@ Jormi_Pulsador::Jormi_Pulsador(byte pin, bool tipo)
 
 /*
 	Estado
-	Devuelve estado del pulsador
-	
+	Devuelve estado del pulsador	
 	return
 		true, pulsado
 		false, no pulsado
 */
-bool Jormi_Pulsador::estado()
+bool jormiPulsador::estado()
 {
 	return _estado;
 }
@@ -32,27 +33,18 @@ bool Jormi_Pulsador::estado()
 /*
 	Update
 */
-void Jormi_Pulsador::update()
+void jormiPulsador::update()
 {	
 	bool x = digitalRead(_pin);
-	
-	// Serial.print("Jormi_Pulsador\t x\t\t\t = \t");
-	// Serial.println(x);	
-	// delay(100);
-	
+		
 	if( _tipo ){
-
 		//	Tipo PullUp
-
 		if( x == LOW )
 			_estado =  true;
 		else
-			_estado =  false;
-	
-	}else{
-			
+			_estado =  false;	
+	}else{			
 		//Tipo PullDown
-
 		if( x == HIGH )
 			_estado =  true;
 		else
@@ -65,15 +57,18 @@ void Jormi_Pulsador::update()
 	Información
 	Muestra en ventana de depuración info de las variables
 */
-void Jormi_Pulsador::informacion()
+void jormiPulsador::informacion()
 {
-	Serial.print("Jormi_Pulsador\t_pin\t\t\t = \t");
+	Serial.print("jormiPulsador\t_pin\t\t\t = \t");
 	Serial.println(_pin);						
-	Serial.print("Jormi_Pulsador\t_estado\t\t\t = \t");
+	Serial.print("jormiPulsador\t_estado\t\t\t = \t");
 	Serial.println(_estado);					
-	Serial.print("Jormi_Pulsador\t_tipo\t\t\t = \t");
+	Serial.print("jormiPulsador\t_tipo\t\t\t = \t");
 	if( _tipo )
 		Serial.println("Pull Up");	
 	else
 		Serial.println("Pull Down");	
 }
+
+
+#endif

@@ -1,5 +1,5 @@
 /*
-	Jormi_Pulsador.h
+	jormiPulsador.h
 	Librería de manejo de pulsadores
 	v0.1	20200820
 	v0.2	20200906
@@ -14,12 +14,12 @@
 */
 
 
-#ifndef Jormi_Pulsador_h
-#define Jormi_Pulsador_h
+#ifndef __jormiPulsador_HPP__
+#define __jormiPulsador_HPP__
 
 #include "Arduino.h"
 
-class Jormi_Pulsador
+class jormiPulsador
 {
 
 private:
@@ -34,7 +34,7 @@ public:
 /*	Constructor
 	int pin
 */
-Jormi_Pulsador(byte pin, bool tipo);
+jormiPulsador(byte pin, bool tipo);
 
 
 /*
@@ -70,4 +70,4 @@ void informacion();
 
 };
 
-#endif
+#endif //__jormiPulsador_HPP__

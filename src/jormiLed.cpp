@@ -1,10 +1,13 @@
+
+#ifndef __jormiLed_HPP__
+#include "jormiLed.hpp"
+
 #include "Arduino.h"
-#include "Jormi_Led.h"
 
 /*
 	Constructor
 */
-Jormi_Led::Jormi_Led(byte pin)
+jormiLed::jormiLed(byte pin)
 {
 	_pin = pin;
 	_periodo = 0;
@@ -19,7 +22,7 @@ Jormi_Led::Jormi_Led(byte pin)
 	Enciende
 	Enciende el led (valor = HIGH)
 */
-void Jormi_Led::enciende()
+void jormiLed::enciende()
 {
 	_estado = HIGH;
 	digitalWrite(_pin, HIGH);
@@ -30,7 +33,7 @@ void Jormi_Led::enciende()
 	Apaga
 	Apaga el led (valor = LOW)
 */
-void Jormi_Led::apaga()
+void jormiLed::apaga()
 {
 	_estado = LOW;
 	digitalWrite(_pin, LOW);
@@ -44,7 +47,7 @@ void Jormi_Led::apaga()
 	return
 		byte pin
 */
-byte Jormi_Led::conectado()
+byte jormiLed::conectado()
 {
 	return _pin;
 }
@@ -55,7 +58,7 @@ byte Jormi_Led::conectado()
 	_parpadeo = 0, el led deja de parpadear
 	_parpadeo != 0, periodo en milisegundos
 */
-void Jormi_Led::parpadeo( unsigned long periodo )
+void jormiLed::parpadeo( unsigned long periodo )
 {
 	if( periodo == 0 ){
 		_estado = LOW;
@@ -70,7 +73,7 @@ void Jormi_Led::parpadeo( unsigned long periodo )
 /*
 	Update
 */
-void Jormi_Led::update()
+void jormiLed::update()
 {
 	if(_periodo != 0){
 		
@@ -94,14 +97,16 @@ void Jormi_Led::update()
 	Información
 	Muestra en ventana de depuración info de las variables
 */
-void Jormi_Led::informacion()
+void jormiLed::informacion()
 {
-	Serial.print("Jormi_Led\t_pin\t\t\t = \t");
+	Serial.print("jormiLed\t_pin\t\t\t = \t");
 	Serial.println(_pin);						
-	Serial.print("Jormi_Led\t_estado\t\t\t = \t");
+	Serial.print("jormiLed\t_estado\t\t\t = \t");
 	Serial.println(_estado);					
-	Serial.print("Jormi_Led\t_periodo\t\t\t = \t");
+	Serial.print("jormiLed\t_periodo\t\t\t = \t");
 	Serial.println(_periodo);			
-	Serial.print("Jormi_Led\t_previousMillis\t\t = \t");
+	Serial.print("jormiLed\t_previousMillis\t\t = \t");
 	Serial.println(_previousMillis); 		
 }
+
+#endif //__jormiLed_HPP__
