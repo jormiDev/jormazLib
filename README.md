@@ -1,7 +1,7 @@
-# jormazLib
+##jormazLib
  
  
-* * * * * * * *   class jormi5Direcciones   * * * * * * * *   
+#class jormi5Direcciones
 
 
 Librería de manejo del modulo 5 direcciones + reset + set
@@ -20,8 +20,7 @@ bool set();        //True si pulsado SET
 bool reset();      //True si pulsado RST
 void informacion();//Muestra por Serial info de las variables
 
-
-* * * * * * * *   class jormiDepura   * * * * * * * *   
+#class jormiDepura
 
 
 Librería para envio de mensajes de depuración
@@ -43,7 +42,7 @@ void vble(String v, long x);
 void binario(String v, byte x);  //Muestra el valor de una variable byte en binario
 
 
-* * * * * * * *   class jormiLed   * * * * * * * *   
+#class jormiLed
 
 
 Librería de manejo de leds
@@ -59,7 +58,7 @@ void parpadeo( unsigned long periodo );  //0 = sin parpadeo,   !0 = periodo en m
 void informacion();                      //Muestra por Serial info de las variables
 
 
-* * * * * * * *   class jormiPulsador   * * * * * * * *   
+#class jormiPulsador
 
 
 Librería de manejo de pulsadores
@@ -77,4 +76,5 @@ void update();
 
 bool estado();                          //	return:  TRUE = pulsado,  FALSE = no pulsado
 void informacion();                     //Muestra por Serial info de las variables
+
 
