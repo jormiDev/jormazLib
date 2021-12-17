@@ -78,4 +78,3 @@ void update();
 bool estado();                          //	return:  TRUE = pulsado,  FALSE = no pulsado
 void informacion();                     //Muestra por Serial info de las variables
 
-
