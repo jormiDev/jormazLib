@@ -12,104 +12,160 @@
  */
 jormiL293D::jormiL293D(int IN1, int IN2, int IN3, int IN4)
 {
-  pinMode(IN1, OUTPUT);  
-  pinMode(IN2, OUTPUT);
-  pinMode(IN3, OUTPUT);
-  pinMode(IN4, OUTPUT);
   _IN1 = IN1;
   _IN2 = IN2;
   _IN3 = IN3;
   _IN4 = IN4;
+  pinMode(_IN1, OUTPUT);  
+  pinMode(_IN2, OUTPUT);
+  pinMode(_IN3, OUTPUT);
+  pinMode(_IN4, OUTPUT);
+  
+  this->stopA();
+  this->stopB();
+  this->enableA();
+  this->enableB();
 }
 
 
 /*
-	Mueve avante
-*/	
-bool jormiL293D::avante(int speed)
+	Constructor 1 motor
+ */
+jormiL293D::jormiL293D(int IN1, int IN2)
 {
-	Serial.print("avante     vel. ");		// * * * * DEBUG * * * *
-	Serial.println(speed);
+  _IN1 = IN1;
+  _IN2 = IN2;
+  _IN3 = -1;
+  _IN4 = -1;  
+  pinMode(_IN1, OUTPUT);  
+  pinMode(_IN2, OUTPUT);
+  
+  this->stopA();
+  this->enableA();
+  this->disableB();
 
-	
+}
+
+
+/*
+	Mueve avante motorA
+*/	
+void jormiL293D::avanteA(int speed){
   analogWrite(_IN1, speed);
   analogWrite(_IN2, LOW);
+}
+
+void jormiL293D::avanteA(){
+  analogWrite(_IN1, 255);
+  analogWrite(_IN2, LOW);
+}
+
+
+/*
+	Mueve avante motorB
+*/	
+void jormiL293D::avanteB(int speed){
   analogWrite(_IN3, speed);
   analogWrite(_IN4, LOW);  
-  return true;
+}
+
+void jormiL293D::avanteB(){
+  analogWrite(_IN3, 255);
+  analogWrite(_IN4, LOW);  
 }
 
 
 /*
-	mueve atras
+	mueve atras motorA
 */
-bool jormiL293D::atras(int speed)
-{
-
-
-	Serial.print("atras     vel.");		// * * * * DEBUG * * * *
-	Serial.println(speed);
-
-
+void jormiL293D::atrasA(int speed){
   analogWrite(_IN1, LOW);
   analogWrite(_IN2, speed);
+}	
+
+void jormiL293D::atrasA(){
+  analogWrite(_IN1, LOW);
+  analogWrite(_IN2, 255);
+}	
+
+
+/*
+	mueve atras motorB
+*/
+void jormiL293D::atrasB(int speed){
   analogWrite(_IN3, LOW);
   analogWrite(_IN4, speed); 
-  return true;
 }
 
-
-/*
-	mueve izqda
-*/
-bool jormiL293D::babor(int speed)
-{
-
-
-	Serial.print("babor     vel.");		// * * * * DEBUG * * * *
-	Serial.println(speed);
-
-	
-  analogWrite(_IN1, speed);
-  analogWrite(_IN2, LOW);
+void jormiL293D::atrasB(){
   analogWrite(_IN3, LOW);
-  analogWrite(_IN4, speed);
-  return true;
+  analogWrite(_IN4, 255); 
 }
 
 
 /*
-	mueve derecha
+	paro motorA
 */
-bool jormiL293D::estribor(int speed)
-{
-
-	Serial.print("estribor     vel.");		// * * * * DEBUG * * * *
-	Serial.println(speed);
-
-
-  analogWrite(_IN1, LOW);
-  analogWrite(_IN2, speed);
-  analogWrite(_IN3, speed);
-  analogWrite(_IN4, LOW);
-  return true;  
-}
-
-
-/*
-	paro
-*/
-bool jormiL293D::stop()
-{
-
-	Serial.println("stop");		// * * * * DEBUG * * * *
-
-	
+void jormiL293D::stopA(){
   analogWrite(_IN1, LOW);
   analogWrite(_IN2, LOW);
+}
+
+
+/*
+	paro motorB
+*/
+void jormiL293D::stopB(){
   analogWrite(_IN3, LOW);
   analogWrite(_IN4, LOW); 
-  return true;  
 }
+
+
+/*
+	activa motorA
+*/
+void jormiL293D::enableA(){
+	_motorA = true;
+}
+
+
+/*
+	desactiva motorA
+*/
+void jormiL293D::disableA(){
+	_motorA = false;
+}
+
+
+/*
+	activa motorB
+*/
+void jormiL293D::enableB(){
+	_motorB = true;
+}
+
+
+/*
+	desactiva motorB
+*/
+void jormiL293D::disableB(){
+	_motorB = false;
+}
+
+
+/*
+	Muestra información del objeto
+*/
+void jormiL293D::informacion(){
+	Serial.print("L293D (pines)  \t");
+	Serial.print(_IN1); Serial.print("\t");
+	Serial.print(_IN1); Serial.print("\t");
+	Serial.print(_IN3); Serial.print("\t");
+	Serial.println(_IN4);
+	Serial.println("      (motores)\tmotorA\t");
+	Serial.print(_motorA); Serial.print("\t");
+	Serial.println(_motorB);
+}	
+
 
 #endif
