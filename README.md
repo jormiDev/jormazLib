@@ -41,15 +41,26 @@ void binario(String v, byte x); //Muestra el valor de una variable byte en binar
 Libreria manejo de motores DC via L293D
 
 jormiL293D(int IN1, int IN2, int IN3, int IN4);
+jormiL293D(int IN1, int IN2);
 
 
-bool avante(int speed);			// speed = 0 ..255
-bool atras(int speed);
-bool estribor(int speed);
-bool babor(int speed);
-bool stop();
-
-
+    void avanteA(int speed);			// speed = 0 ..255
+    void avanteA();				// full speed
+    void avanteB(int speed);			// speed = 0 ..255
+    void avanteB();				// full speed
+    
+    	void atrasA(int speed);			// speed = 0 ..255
+    	void atrasA();				// full speed
+    	void atrasB(int speed);			// speed = 0 ..255
+    	void atrasB();				// full speed
+    
+    	void stopA();	
+	void stopB();	
+	void enableA();
+	void disableA();
+	void enableB();
+	void disableB();
+	void informacion();
 
 #	class jormiLed
 Librería de manejo de leds
