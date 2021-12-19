@@ -8,7 +8,7 @@
 	Constructor
 */
 jormiDepura::jormiDepura(){
-	Serial.print("lib_depura * * * OK\n");
+	Serial.print("jormiDepura	*	*	*	OK\n");
 }
 
 

@@ -14,6 +14,7 @@ Incluye gestion de:
 -Manejo de Leds
 -Manejo de pulsadores pullUp / pullDown
 -Manejo de joystick
+-Manejo motores DC via L293D
 
 \page Revision History
 \par 2021.07.16 v1.0
@@ -31,6 +32,7 @@ Compilacion de las librerias separdas a un conjunta
 #include "jormiPulsador.hpp"
 #include "jormiLed.hpp"
 #include "jormi5Direcciones.hpp"
+#include "jormiL293D.hpp"
 
 /*
  *	*************************************************************************

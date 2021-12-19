@@ -12,3 +12,4 @@
 #include "jormiPulsador.cpp"
 #include "jormiLed.cpp"
 #include "jormi5Direcciones.cpp"
+#include "jormiL293D.cpp"
