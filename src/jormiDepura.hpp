@@ -43,6 +43,7 @@ void salto();
 	Muestra el valor de una variable int, String, bool, float, byte, uLong, long
 */
 void vble(String v, int x);
+void vble(String v, unsigned int x);
 void vble(String v, String x);
 void vble(String v, bool x);
 void vble(String v, float x);

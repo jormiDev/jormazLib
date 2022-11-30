@@ -8,7 +8,7 @@
 	Constructor
 */
 jormiDepura::jormiDepura(){
-	Serial.print("jormiDepura	*	*	*	OK\n");
+	Serial.print(" jormiDepura	*	*	*	OK\n");
 }
 
 
@@ -39,6 +39,18 @@ void jormiDepura::salto()
 	Muestra el valor de una variable INT
 */
 void jormiDepura::vble(String v, int x)
+{
+	Serial.print("(Int)\t\t");
+	Serial.print(v);
+	Serial.print("\t = \t");
+	Serial.println(x);
+}
+
+/*
+	xInt
+	Muestra el valor de una variable Unsigned INT
+*/
+void jormiDepura::vble(String v, unsigned int x)
 {
 	Serial.print("(Int)\t\t");
 	Serial.print(v);

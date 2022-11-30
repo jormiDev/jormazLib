@@ -51,13 +51,17 @@ jormiL293D::jormiL293D(int IN1, int IN2)
 	Mueve avante motorA
 */	
 void jormiL293D::avanteA(int speed){
-  analogWrite(_IN1, speed);
-  analogWrite(_IN2, LOW);
+	if(_motorA){
+		analogWrite(_IN1, speed);
+		analogWrite(_IN2, LOW);
+	}
 }
 
 void jormiL293D::avanteA(){
-  analogWrite(_IN1, 255);
-  analogWrite(_IN2, LOW);
+	if(_motorA){
+	  analogWrite(_IN1, 255);
+	  analogWrite(_IN2, LOW);
+	}
 }
 
 
@@ -65,13 +69,17 @@ void jormiL293D::avanteA(){
 	Mueve avante motorB
 */	
 void jormiL293D::avanteB(int speed){
-  analogWrite(_IN3, speed);
-  analogWrite(_IN4, LOW);  
+	if(_motorB){
+		analogWrite(_IN3, speed);
+		analogWrite(_IN4, LOW);
+	}	
 }
 
 void jormiL293D::avanteB(){
-  analogWrite(_IN3, 255);
-  analogWrite(_IN4, LOW);  
+	if(_motorB){
+		analogWrite(_IN3, 255);
+		analogWrite(_IN4, LOW);  
+	}
 }
 
 
@@ -79,13 +87,17 @@ void jormiL293D::avanteB(){
 	mueve atras motorA
 */
 void jormiL293D::atrasA(int speed){
-  analogWrite(_IN1, LOW);
-  analogWrite(_IN2, speed);
+	if(_motorA){
+	  analogWrite(_IN1, LOW);
+	  analogWrite(_IN2, speed);
+	}
 }	
 
 void jormiL293D::atrasA(){
+	if(_motorA){
   analogWrite(_IN1, LOW);
   analogWrite(_IN2, 255);
+	}
 }	
 
 
@@ -93,13 +105,17 @@ void jormiL293D::atrasA(){
 	mueve atras motorB
 */
 void jormiL293D::atrasB(int speed){
-  analogWrite(_IN3, LOW);
-  analogWrite(_IN4, speed); 
+	if(_motorB){
+	  analogWrite(_IN3, LOW);
+	  analogWrite(_IN4, speed); 
+	}
 }
 
 void jormiL293D::atrasB(){
-  analogWrite(_IN3, LOW);
-  analogWrite(_IN4, 255); 
+	if(_motorB){
+	  analogWrite(_IN3, LOW);
+	  analogWrite(_IN4, 255); 
+	}
 }
 
 
@@ -107,8 +123,10 @@ void jormiL293D::atrasB(){
 	paro motorA
 */
 void jormiL293D::stopA(){
-  analogWrite(_IN1, LOW);
-  analogWrite(_IN2, LOW);
+	if(_motorA){
+	  analogWrite(_IN1, LOW);
+	  analogWrite(_IN2, LOW);
+	}
 }
 
 
@@ -116,8 +134,10 @@ void jormiL293D::stopA(){
 	paro motorB
 */
 void jormiL293D::stopB(){
-  analogWrite(_IN3, LOW);
-  analogWrite(_IN4, LOW); 
+	if(_motorB){
+	  analogWrite(_IN3, LOW);
+	  analogWrite(_IN4, LOW); 
+	}
 }
 
 
