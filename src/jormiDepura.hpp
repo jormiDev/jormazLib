@@ -5,6 +5,7 @@
 	v0.1	20200906
 	v0.2	20210130
 	v0.3	20210212	añadida sobrecarga y byte en binario
+	v0.4	20230507	mas tipos añadidos
 
 */
 
@@ -34,7 +35,7 @@ void texto(String cadena);
 
 /*
 	salto
-	Inserta linea en blanco
+	Inserta salto de linea
 */
 void salto();
 
@@ -43,7 +44,6 @@ void salto();
 	Muestra el valor de una variable int, String, bool, float, byte, uLong, long
 */
 void vble(String v, int x);
-void vble(String v, unsigned int x);
 void vble(String v, String x);
 void vble(String v, bool x);
 void vble(String v, float x);
