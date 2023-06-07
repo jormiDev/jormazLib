@@ -47,7 +47,11 @@ void vble(String v, unsigned int x);
 void vble(String v, String x);
 void vble(String v, bool x);
 void vble(String v, float x);
+void vble(String v, double x);
 void vble(String v, byte x);
+void vble(String v, char x);
+void vble(String v, word x);
+void vble(String v, unsigned int x);
 void vble(String v, unsigned long x);
 void vble(String v, long x);
 
