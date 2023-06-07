@@ -14,19 +14,16 @@ jormiDepura::jormiDepura(){
 
 /*
 	texto
-	Muestra una cadena de texto + \n
-	Entrada: cadena de texto
 */
 void jormiDepura::texto(String cadena)
 {
-	Serial.print("\t\t");
+	Serial.print("\t");
 	Serial.println(cadena);
 }
 
 
 /*
 	salto
-	Inserta linea en blanco
 */
 void jormiDepura::salto()
 {
@@ -36,35 +33,22 @@ void jormiDepura::salto()
 
 /*
 	xInt
-	Muestra el valor de una variable INT
 */
 void jormiDepura::vble(String v, int x)
 {
-	Serial.print("(Int)\t\t");
+	Serial.print("(int)\t");
 	Serial.print(v);
 	Serial.print("\t = \t");
 	Serial.println(x);
 }
 
-/*
-	xInt
-	Muestra el valor de una variable Unsigned INT
-*/
-void jormiDepura::vble(String v, unsigned int x)
-{
-	Serial.print("(Int)\t\t");
-	Serial.print(v);
-	Serial.print("\t = \t");
-	Serial.println(x);
-}
 
 /*
 	xString
-	Muestra el valor de una variable String
 */
 void jormiDepura::vble(String v, String x)
 {
-	Serial.print("(String)\t");
+	Serial.print("(string)\t");
 	Serial.print(v);
 	Serial.print("\t = \t");
 	Serial.println(x);
@@ -72,23 +56,22 @@ void jormiDepura::vble(String v, String x)
 
 /*
 	xBool
-	Muestra el valor de una variable bool
 */
 void jormiDepura::vble(String v, bool x)
 {
-	Serial.print("(Bool)\t\t");
+	Serial.print("(bool)\t");
 	Serial.print(v);
 	Serial.print("\t = \t");
 	Serial.println(x);
 }
 
+
 /*
 	xFloat
-	Muestra el valor de una variable Float
 */
 void jormiDepura::vble(String v, float x)
 {
-	Serial.print("(Float)\t\t");
+	Serial.print("(float)\t");
 	Serial.print(v);
 	Serial.print("\t = \t");
 	Serial.println(x,5);
@@ -96,12 +79,23 @@ void jormiDepura::vble(String v, float x)
 
 
 /*
+	xDouble
+*/
+void jormiDepura::vble(String v, double x)
+{
+	Serial.print("(double)\t");
+	Serial.print(v);
+	Serial.print("\t = \t");
+	Serial.println(x,10);
+}
+
+
+/*
 	xByte
-	Muestra el valor de una variable byte
 */
 void jormiDepura::vble(String v, byte x)
 {
-	Serial.print("(Byte)\t\t");
+	Serial.print("(byte)\t");
 	Serial.print(v);
 	Serial.print("\t = \t");
 	Serial.println(x,5);
@@ -109,36 +103,71 @@ void jormiDepura::vble(String v, byte x)
 
 
 /*
-	xULong
-	Muestra el valor de una variable unsigned long
+	xChar
+*/
+void jormiDepura::vble(String v, char x)
+{
+	Serial.print("(char)\t");
+	Serial.print(v);
+	Serial.print("\t = \t");
+	Serial.println(x,5);
+}
+
+
+/*
+	xWord
+*/
+void jormiDepura::vble(String v, word x)
+{
+	Serial.print("(word)\t");
+	Serial.print(v);
+	Serial.print("\t = \t");
+	Serial.println(x,5);
+}
+
+
+/*
+	xUnsignedInt
+*/
+void jormiDepura::vble(String v, unsigned int x)
+{
+	Serial.print("(unsigned int)\t");
+	Serial.print(v);
+	Serial.print("\t = \t");
+	Serial.println(x);
+}
+
+
+/*
+	xUnsignedLong
 */
 void jormiDepura::vble(String v, unsigned long x)
 {
-	Serial.print("(Unsigned long)\t\t");
+	Serial.print("(unsigned long)\t");
 	Serial.print(v);
 	Serial.print("\t = \t");
 	Serial.println(x,5);
 }
+
 
 /*
 	xLong
-	Muestra el valor de una variable long
 */
 void jormiDepura::vble(String v, long x)
 {
-	Serial.print("(Long)\t\t");
+	Serial.print("(long)\t");
 	Serial.print(v);
 	Serial.print("\t = \t");
 	Serial.println(x,5);
 }
 
+
 /*
 	xByte
-	Muestra el valor de una variable byte en binario
 */
 void jormiDepura::binario(String v, byte x)
 {
-	Serial.print("(En binario)\t\t");
+	Serial.print("(convert binario)\t");
 	Serial.print(v);
 	Serial.print("\t = \t");
 	for (int b = 7; b >= 0; b--){
