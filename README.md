@@ -31,6 +31,7 @@ Librería para envio de mensajes de depuración
 	void vble(String v, bool x); 
 	void vble(String v, float x); 
 	void vble(String v, byte x); 
+	void vble(String v, char x); 
 	void vble(String v, unsigned long x); 
 	void vble(String v, long x);
 	void binario(String v, byte x); //Muestra el valor de una variable byte en binario
