@@ -41,19 +41,6 @@ void jormiLed::apaga()
 
 
 /*
-	Conectado
-	Devuelve el numero de pin donde esta el led (objeto)
-	
-	return
-		byte pin
-*/
-byte jormiLed::conectado()
-{
-	return _pin;
-}
-
-
-/*
 	Parpadeo
 	_parpadeo = 0, el led deja de parpadear
 	_parpadeo != 0, periodo en milisegundos
