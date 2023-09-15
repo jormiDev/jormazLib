@@ -5,7 +5,6 @@
 
 #include "Arduino.h"
 
-#define LOW 0
 
 /*
 	Constructor 2 motores
