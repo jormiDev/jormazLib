@@ -127,18 +127,6 @@ void jormiDepura::vble(String v, word x)
 
 
 /*
-	xUnsignedInt
-*/
-void jormiDepura::vble(String v, unsigned int x)
-{
-	Serial.print("(unsigned int)\t");
-	Serial.print(v);
-	Serial.print("\t = \t");
-	Serial.println(x);
-}
-
-
-/*
 	xUnsignedLong
 */
 void jormiDepura::vble(String v, unsigned long x)

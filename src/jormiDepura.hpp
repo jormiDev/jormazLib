@@ -51,7 +51,6 @@ void vble(String v, double x);
 void vble(String v, byte x);
 void vble(String v, char x);
 void vble(String v, word x);
-void vble(String v, unsigned int x);
 void vble(String v, unsigned long x);
 void vble(String v, long x);
 
