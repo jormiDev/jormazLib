@@ -136,10 +136,10 @@ bool jormi5Direcciones::reset()
 */
 void jormi5Direcciones::update()
 {	
-	byte leido;
+/*	byte leido;
 
 	leido = digitalRead(_pinUP);
-/*	if( leido != HIGH)
+	if( leido != HIGH)
 		_estado = bitSet(_estado, BUTTON_UP);
 	else
 		_estado = bitClear(_estado, BUTTON_UP);	
