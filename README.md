@@ -1,21 +1,12 @@
 ##	jormazLib
 
+#	class jormiMatrix
+Libreria para el manejo del la matrixLED del UNO r4 WIFI
 
-#	class jormi5Direcciones
-Librería de manejo del modulo 5 direcciones + reset + set
+	jormiMatrix();
 
-	jormi5Direcciones(byte pinUP, byte pinDWN, byte pinLFT, byte pinRHT, byte pinMID, byte pinSET, byte pinRST); 
-
-	byte estado(); 			//Devuelve el byte que contiene la lectura de pines 
-	bool arriba(); 			//True si pulsado UP 
-	bool abajo(); 			//True si pulsado DWN 
-	bool izquierda(); 		//True si pulsado LFT 
-	bool derecha(); 		//True si pulsado RHT 
-	bool centro(); 			//True si pulsado MID 
-	bool set(); 			//True si pulsado SET 
-	bool reset(); 			//True si pulsado RST 
-	void update();			//loop update
-	void informacion();		//Muestra por Serial info de las variables
+ 	jormiMatrixCodigo(DEFINE_DEL_CODIGO);							//Muestra codigo ya definido
+  	jormiMatrixTexto(int x, int y, String texto, int velocidad, int direccionScroll);  	//Scroll  -1 / 0 / 1
 
 
 #	class jormiDepura
@@ -87,3 +78,20 @@ Librería de manejo de pulsadores
 
 	bool estado(); 				// return: TRUE = pulsado, FALSE = no pulsado 
 	void informacion(); 			// info
+
+
+#	class jormi5Direcciones
+Librería de manejo del modulo 5 direcciones + reset + set
+
+	jormi5Direcciones(byte pinUP, byte pinDWN, byte pinLFT, byte pinRHT, byte pinMID, byte pinSET, byte pinRST); 
+
+	byte estado(); 			//Devuelve el byte que contiene la lectura de pines 
+	bool arriba(); 			//True si pulsado UP 
+	bool abajo(); 			//True si pulsado DWN 
+	bool izquierda(); 		//True si pulsado LFT 
+	bool derecha(); 		//True si pulsado RHT 
+	bool centro(); 			//True si pulsado MID 
+	bool set(); 			//True si pulsado SET 
+	bool reset(); 			//True si pulsado RST 
+	void update();			//loop update
+	void informacion();		//Muestra por Serial info de las variables
