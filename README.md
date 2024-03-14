@@ -5,8 +5,8 @@ Libreria para el manejo del la matrixLED del UNO r4 WIFI
 
 	jormiMatrix();
 
- 	jormiMatrixCodigo(DEFINE_DEL_CODIGO);							//Muestra codigo ya definido
-  	jormiMatrixTexto(int x, int y, String texto, int velocidad, int direccionScroll);  	//Scroll  -1 / 0 / 1
+ 	void matrixCodigo(DEFINE_DEL_CODIGO);							//Muestra codigo ya definido
+  	void matrixTexto(int x, int y, String texto, int velocidad, int direScroll);  	//Scroll  -1 / 0 / 1
 
 
 #	class jormiDepura

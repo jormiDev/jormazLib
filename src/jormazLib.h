@@ -31,8 +31,9 @@ Compilacion de las librerias separdas a un conjunta
 #include "jormiDepura.hpp"
 #include "jormiPulsador.hpp"
 #include "jormiLed.hpp"
-#include "jormi5Direcciones.hpp"
+//#include "jormi5Direcciones.hpp"
 #include "jormiL293D.hpp"
+#include "jormiMatrix.hpp"
 
 /*
  *	*************************************************************************
